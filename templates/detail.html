@@ -1,0 +1,31 @@
+{% include "header.html" %}
+<SCRIPT LANGUAGE="JavaScript" SRC="/static/js/blogs.js"></SCRIPT>
+<div>
+{% if post %}
+<div style="margin-right:201px;">    
+    <div>
+	    <div><p><span class="title"><a href="/blog/v/{{ post.id }}/">{{ post.title|title }}</a></span>{% if isSU %} <span class="adminLink"> | <a href="/blog/edit/{{ post.id }}/">EDIT</a> | <a href="#">DELETE</a> |</span>{% endif %}</p></div>
+	    <div>By: {{post.author.firstName|title}} {{post.author.lastName|title}} on {{post.dateCreated}}</div>
+	    <div>{% if post != "" %}<img src="{{post.image}}" height=100 width=100 \><br /> {% endif %}{{post.body|safe}}</div>
+    </div>
+    {% for tag in post.tags %}<a href="/blog/tags/{{ tag.name|urlencode }}/">#{{tag.name}}</a> {% endfor %}
+    {% if comments %}
+    <ul>
+    {% for comment in comments %}
+	    <li>{{comment.name}} | {{comment.body}}</li>
+	{% endfor %}
+    </ul>
+    {% else %}
+    <p>There are no comments for this blog post.</p>
+    {% endif %}
+    
+    <a href="#" id="addCommentLink">Add Comment</a>
+    <div id="addCommentForm" style="display:none;">
+    	{% include "addComment.html" %}
+    </div>
+</div>
+{% else %}
+    <p>Blog post not found.</p>
+{% endif %}
+{% include "sideNav.html" %}
+</div>

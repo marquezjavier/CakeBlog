@@ -1,0 +1,11 @@
+{% include "header.html" %}
+<p>{{ message }} </p>
+<form action="" method="post">
+{% csrf_token %}
+	UserName: <input type="text" name="username" value="" required><br />
+	Password: <input type="password" name="password" value="" required><br />
+	Email: <input type="text" name="email" value="" required><br />
+	First Name: <input type="text" name="firstName" value="" required><br />
+	Last Name: <input type="text" name="lastName" value="" required><br />
+<input type="submit" value="Post" />
+</form>

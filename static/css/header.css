@@ -1,0 +1,32 @@
+	a:link {text-decoration:none;color: #C4004F;}
+	a:visited {text-decoration:none;color: #E0005A;}
+	a:hover {text-decoration:underline;}
+	a:active {text-decoration:underline;}
+	h1 a:hover { text-decoration: none; }
+
+h1 {
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 50px;
+    line-height: 70px;
+	font-weight: 100 !important;
+}
+.title{
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size:23;
+	line-height: 1.2;
+	font-weight: bold;
+}
+
+.blogImage{
+	float:left;
+	padding-right:5px;
+}
+
+ul {list-style: none;}
+ 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    color:616161;
+}

@@ -1,0 +1,8 @@
+<form action="" method="post">
+{% csrf_token %}
+Name: <input type="text" name="n" value="" required><br />
+Email: <input type="text" name="e" value="" required><br />
+Image: <input type="text" name="i" value=""><br />
+Body: <textarea name="b" rows="4" cols="50" required></textarea><br />
+<input type="submit" value="Post" />
+</form>

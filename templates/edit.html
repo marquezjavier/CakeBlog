@@ -1,0 +1,18 @@
+{% include "header.html" %}
+<h1>Editing - {{ postData.title }}</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+	Title: <input type="text" name="title" value="{{ postData.title }}" required><br />
+	Body: <textarea name="body" rows="4" cols="50" required>{{ postData.body }}</textarea><br />
+	Image: <input type="text" name="image" value="{{ postData.image }}"><br />
+	Category: 
+	<select name="cat">
+	  <option value="1" {% if postData.CategoryId == 1 %}selected{% endif %}>Programming</option>
+	  <option value="2" {% if postData.CategoryId == 2 %}selected{% endif %}>Games</option>
+	  <option value="3" {% if postData.CategoryId == 3 %}selected{% endif %}>Books</option>
+	  <option value="4" {% if postData.CategoryId == 4 %}selected{% endif %}>Random</option>
+	</select><br />
+	Tags (Separate with HashTags #): <input type="text" name="tags" value="{% for tag in postData.tags %}#{{tag.name}} {% endfor %}"><br />
+<input type="submit" value="Post" />
+</form>

@@ -1,0 +1,18 @@
+{% include "header.html" %}
+<h1>Add new blog post</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+	Title: <input type="text" name="title" required><br />
+	Body: <textarea name="body" rows="4" cols="50" required></textarea><br />
+	Image: <input type="text" name="image"><br />
+	Category: 
+	<select name="cat">
+	  <option value="1">Programming</option>
+	  <option value="2">Games</option>
+	  <option value="3">Books</option>
+	  <option value="4" selected>Random</option>
+	</select><br />
+	Tags (Separate with HashTags #): <input type="text" name="tags"><br />
+<input type="submit" value="Post" />
+</form>
